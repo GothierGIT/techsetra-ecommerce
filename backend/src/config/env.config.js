@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import {z} from 'zod';
 import { process } from 'zod/v4/core';
 
