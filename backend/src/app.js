@@ -5,6 +5,7 @@ import cors from 'cors';
 import {corsOptions, helmetOptions} from './config/security.config.js';
 import { requestId } from './shared/middlewares/requestId.middleware.js';
 import { errorHandler } from './shared/middlewares/errorHandler.middleware.js';
+import routes from './routes/index.routes.js';
 
 const app = express();
 
@@ -16,6 +17,8 @@ app.use(express.json());
 app.get('/health', (req, res)=>{
     res.status(200).json({status: 'ok'});
 });
+
+app.use('/api', routes);
 
 
 app.use(errorHandler);
