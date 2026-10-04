@@ -1,0 +1,1 @@
+export {usuarioService} from './usuario.service.js';
